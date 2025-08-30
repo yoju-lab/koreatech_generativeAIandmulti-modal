@@ -28,7 +28,7 @@
 
 ## 폴더 구조
 - codes/ : 데이터, 노트북, 문서, 모델 관련 파일
-	- docs/ : 프리트레이닝, 파인튜닝, PEFT, LoRA, SFT 관련 설명 문서
+	- docs/ : LLM 프리트레이닝, 파인튜닝, PEFT, LoRA, SFT 관련 설명 문서
 		- 01.pretraining_finetuning.md : 프리트레이닝과 파인튜닝 개념 및 차이 설명
 		- 02.peft_lora.md : PEFT와 LoRA 원리 및 장점 설명
 		- 03.lora.md : LoRA 상세 원리 및 기존 방식 비교
@@ -38,18 +38,35 @@
 		- adapter_config.json : LoRA/PEFT 어댑터 설정
 		- README.md : 모델 설명 및 사용법
 	- data/ : 파인튜닝 및 평가용 데이터셋
-		- train.jsonl : 학습 데이터
-		- eval.jsonl : 평가 데이터
+		- train.jsonl : 학습 데이터 (JSON Lines 형식)
+		- eval.jsonl : 평가 데이터 (JSON Lines 형식)
 	- notebooks/ : 실습 및 실험용 Jupyter 노트북
-		- finetune_example.ipynb : 파인튜닝 실습 예제
-		- lora_peft_example.ipynb : LoRA/PEFT 적용 예제
+		- finetune_example.ipynb : SFT 파인튜닝 실습 예제
+		- lora_peft_example.ipynb : LoRA/PEFT 적용 실습 예제
 	- scripts/ : 데이터 처리 및 모델 학습 스크립트
-		- preprocess.py : 데이터 전처리 스크립트
-		- train.py : 모델 학습 스크립트
-		- evaluate.py : 모델 평가 스크립트
+		- preprocess.py : 데이터 전처리 스크립트 (데이터 정제, 변환 등)
+		- train.py : 모델 학습 스크립트 (SFT, LoRA, PEFT 등 적용)
+		- evaluate.py : 모델 평가 스크립트 (성능 측정, 결과 분석)
 
 - dockers/ : Dockerfile, docker-compose.yml
 - requirements.txt : 프로젝트 의존성
+
+## codes/ 폴더 상세 설명
+
+- **docs/**  
+	LLM 관련 핵심 개념 및 기술 설명 문서. 각 md 파일은 프리트레이닝, 파인튜닝, PEFT, LoRA, SFT의 원리와 적용법을 다룸.
+
+- **llama3-8b-news-analyzer-ko/**  
+	파인튜닝된 모델 디렉터리. 모델 설정(config.json), LoRA/PEFT 어댑터(adapter_config.json), 사용법(README.md) 포함.
+
+- **data/**  
+	파인튜닝 및 평가에 사용되는 데이터셋 저장. train.jsonl은 학습, eval.jsonl은 평가용.
+
+- **notebooks/**  
+	Jupyter 노트북 실습 예제. 파인튜닝 및 PEFT/LoRA 적용 실험을 단계별로 수행.
+
+- **scripts/**  
+	데이터 전처리(preprocess.py), 모델 학습(train.py), 평가(evaluate.py) 등 자동화 스크립트 제공.
 
 ## 주요 문서 요약
 - **01.pretraining_finetuning.md** : 프리트레이닝과 파인튜닝의 개념, 차이, 적용 예시
