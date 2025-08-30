@@ -1,4 +1,3 @@
-
 # koreatech_finetuning_openLLM
 
 ## 프로젝트 개요
@@ -30,7 +29,25 @@
 ## 폴더 구조
 - codes/ : 데이터, 노트북, 문서, 모델 관련 파일
 	- docs/ : 프리트레이닝, 파인튜닝, PEFT, LoRA, SFT 관련 설명 문서
+		- 01.pretraining_finetuning.md : 프리트레이닝과 파인튜닝 개념 및 차이 설명
+		- 02.peft_lora.md : PEFT와 LoRA 원리 및 장점 설명
+		- 03.lora.md : LoRA 상세 원리 및 기존 방식 비교
+		- 04.sft.md : SFT 개념 및 적용 방법
 	- llama3-8b-news-analyzer-ko/ : 파인튜닝된 모델 및 설정 파일
+		- config.json : 모델 설정 정보
+		- adapter_config.json : LoRA/PEFT 어댑터 설정
+		- README.md : 모델 설명 및 사용법
+	- data/ : 파인튜닝 및 평가용 데이터셋
+		- train.jsonl : 학습 데이터
+		- eval.jsonl : 평가 데이터
+	- notebooks/ : 실습 및 실험용 Jupyter 노트북
+		- finetune_example.ipynb : 파인튜닝 실습 예제
+		- lora_peft_example.ipynb : LoRA/PEFT 적용 예제
+	- scripts/ : 데이터 처리 및 모델 학습 스크립트
+		- preprocess.py : 데이터 전처리 스크립트
+		- train.py : 모델 학습 스크립트
+		- evaluate.py : 모델 평가 스크립트
+
 - dockers/ : Dockerfile, docker-compose.yml
 - requirements.txt : 프로젝트 의존성
 
